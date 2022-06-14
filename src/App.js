@@ -31,7 +31,7 @@ function App() {
   const getKoerierData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/v1/drivers?active=true"
+        "https://newbackend.samyfarahat.repl.co/api/v1/drivers?active=true"
       );
       setKoerierData(res.data);
       // alert("rerendered");
@@ -42,7 +42,7 @@ function App() {
   const getMapData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/v1/drivers?active=true"
+        "https://newbackend.samyfarahat.repl.co/api/v1/drivers?active=true"
       );
       setMapData(res.data);
       console.log(mapData);
