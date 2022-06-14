@@ -80,7 +80,9 @@ function App() {
         style={{ width: "100vw", height: "100vw" }}
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
-        mapboxAccessToken={process.env.REACT_APP_MAPBOX}
+        mapboxAccessToken={
+          "pk.eyJ1Ijoic2FteWZhcmFoYXQiLCJhIjoiY2t6cG43aWl3M2pqbTJ3bnJybTdieWdjdyJ9.fBgRVDBquxFr-50FuQDOdA"
+        }
         mapStyle="mapbox://styles/mapbox/streets-v10?optimize=true"
       >
         <Marker latitude={52.293069} longitude={4.861301}>
