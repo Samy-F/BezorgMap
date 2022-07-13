@@ -1,6 +1,5 @@
 import Map, { Marker, Popup } from "react-map-gl";
 
-import mapboxgl from "mapbox-gl"; // or "const mapboxgl = require('mapbox-gl');"
 import { Room, Star } from "@mui/icons-material";
 import { useState, useEffect, memo } from "react";
 import "./app.css";
@@ -13,6 +12,14 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import useFetch from "./hooks/useFetch";
+
+// The following is required to stop "npm build" from transpiling mapbox code.
+// notice the exclamation point in the import.
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+import mapboxgl from "mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 
 function App() {
   const currentUser = "Samy";
